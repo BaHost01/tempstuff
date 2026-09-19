@@ -1,11 +1,18 @@
-# Delta 2.738.1397 upload
+# Delta 2.738.1397
 
-The APK is too large for a single normal GitHub blob.
+The APK is split into GitHub-safe binary parts because a normal GitHub file is limited to 100 MiB.
 
-Expected layout:
-- `parts/` contains the split binary parts.
-- `reconstruct.ps1` reconstructs the APK from those parts on Windows.
-- `reconstruct.py` reconstructs it with Python.
+Files:
+- `parts/Delta-2.738.1397.apk.part00`
+- `parts/Delta-2.738.1397.apk.part01`
+- `parts/Delta-2.738.1397.apk.part02`
+- `parts/Delta-2.738.1397.apk.part03`
 
-Source archive: `Delta-2.738.1397.zip`
-Contained APK: `Delta-2.738.1397.apk`
+The original APK is 159,853,296 bytes and is split into 4 parts.
+
+After downloading all parts into `parts/`, run either:
+- Windows: `reconstruct-apk.ps1`
+- Python: `python reconstruct-apk.py`
+
+SHA-256 of the reconstructed APK:
+`4bcb90eee40004a2bc62236c0cadb97850abe98488666c3945fd6527325a6128`
